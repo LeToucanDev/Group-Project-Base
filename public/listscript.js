@@ -1,8 +1,8 @@
-async function getData(){
+function getData(){
     let result = JSON.parse(window.localStorage.getItem("filteredAlbums")); // Retrieving   
     // Simulate a mouse click:
     let html = '';
-    result.array.forEach(element => {
+    result.forEach(element => {
         html += `
         <table>
             <tr>
@@ -20,11 +20,13 @@ async function getData(){
         </table>
         `
     });
-    return html;
+
+    element = document.getElementById('contra1');
+    element.innerHTML = html;
 }
 
 function start(){
-    document.querySelector('.container').innerHTML = getData;
+    getData();
 }
 
 window.onload = start();
