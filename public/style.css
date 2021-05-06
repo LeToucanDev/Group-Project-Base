@@ -8,6 +8,7 @@ h1, h2, h3 {
 
 .form {
   text-align: center;
+  background-color: #c6f0de;
 }
 
 table, th, td {
@@ -61,5 +62,11 @@ img{
 }
 
 .button{
-  width: 250px;
+  width: 250px; /* which button is this for? affects all buttons with class button (like in top right) */
+}
+
+.notice {
+  background-color: #c6f0de;
+  margin-top: 20px;
+  height: 120px;
 }
