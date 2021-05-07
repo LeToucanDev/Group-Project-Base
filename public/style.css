@@ -8,7 +8,8 @@ h1, h2, h3 {
 
 .form {
   text-align: center;
-  background-color: #c6f0de;
+  background-color: rgb(227, 250, 242);
+  padding-top: 20px;
 }
 
 table, th, td {
@@ -20,7 +21,7 @@ table {
 }
 
 th{
-  background-color: #00D1B2;
+  background-color: rgb(180, 241, 220);
 }
 
 tr {
@@ -39,7 +40,7 @@ textarea {
   height: 150px;
 }
 .aboutbackground{
-  background-color:#c6f0de;
+  background-color:rgb(227, 250, 242);
   padding-top: 25px;
   padding-left: 30px;
   padding-right: 30px;
@@ -70,7 +71,6 @@ img{
 }
 
 .notice {
-  background-color: #c6f0de;
-  margin-top: 20px;
-  height: 120px;
+  height: 100px;
+  margin-top: -20px;
 }

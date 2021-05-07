@@ -3,12 +3,11 @@ function start(){
         let genre = event.target.id;
         let request = await fetch(`/api/songs/${genre}`);
         sourceAlbums = await request.json();
-    
-        window.localStorage.setItem("filteredAlbums", JSON.stringify(sourceAlbums)); // Saving
-        window.location.href = `/genre`; 
-        
+
+        window.localStorage.setItem('filteredAlbums', JSON.stringify(sourceAlbums)); // Saving
+        window.location.href = '/genre';
     }
-    
+
     let element = document.getElementById('rock');
     element.onclick = ClickGenre;
     let element1 = document.getElementById('pop');
@@ -34,15 +33,15 @@ async function clickSuggestion(event){
     let request = await fetch(`/api/songs/album/${eventName}`);
     sourceAlbums = await request.json();
 
-    window.localStorage.setItem("filteredAlbums", JSON.stringify(sourceAlbums)); // Saving
-    window.location.href = `/genre`; 
+    window.localStorage.setItem('filteredAlbums', JSON.stringify(sourceAlbums)); // Saving
+    window.location.href = '/genre';
 }
 
 async function Search(){
     const searchInput = document.querySelector('.search'); //This chooses an element with the class search
     const suggestions = document.querySelector('.suggestions'); //Chooses element with class suggestions
 
-    const request = await fetch(`/api/albums`);
+    const request = await fetch('/api/albums');
     const mArr = await request.json()
 
 
@@ -61,16 +60,14 @@ async function Search(){
                     <span id='${Song.album_id}' class="sug-box name">${Song.album_name}</span> <br>
                     </li>       
             `;
-    
         }).join(''); //This changes html from an array to a big string
-    
+
         if(query){
             suggestions.innerHTML = html; //takes the html strong from html and creates html in this element
             document.querySelector('.sug-box').addEventListener('click', (evt) => clickSuggestion(evt))
         }else {
-            suggestions.innerHTML = "";
+            suggestions.innerHTML = '';
         }
-        
     };
     searchInput.addEventListener('change',(evt)=> displayMatches(evt));
     searchInput.addEventListener('keyup',(evt)=> displayMatches(evt));
