@@ -62,7 +62,11 @@ img{
 }
 
 .button{
-  width: 250px; /* which button is this for? affects all buttons with class button (like in top right) */
+  width: 250px;
+}
+
+#button{
+  width: 150px;
 }
 
 .notice {
