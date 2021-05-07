@@ -56,7 +56,7 @@ async function Search(){
          query = event.target.value;
         const matchArr = findMatches(query, mArr); //this.value is the data being input in the form
         const html = matchArr.map(Song => { //.map creates an array with equal size but replaces the values with this instead
-            return ` <li class = "box">        
+            return ` <li class = "box mb-2">        
                     <span id='${Song.album_id}' class="sug-box name">${Song.album_name}</span> <br>
                     </li>       
             `;
