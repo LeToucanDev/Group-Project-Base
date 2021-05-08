@@ -48,8 +48,7 @@ app.get('/insert', (req, res) => {
 });
 
 async function bootServer() {
-  try {
-    
+  try {    
     app.listen(PORT, async () => {
       const mysql = await db.sequelizeDB;
       await mysql.sync();
