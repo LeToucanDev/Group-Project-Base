@@ -6,6 +6,7 @@ export default (sequelize, DataTypes) => {
           type: DataTypes.INTEGER,
           allowNull: false,
           unique: true,
+          autoIncrement: true,
           primaryKey: true
         },
         title: {
@@ -32,5 +33,8 @@ export default (sequelize, DataTypes) => {
       { freezeTableName: true, timestamps: false }
     );
     return Songs;
+    Songs.associate = (models) =>{
+      Songs.belongsTo(models.Albums)
+    }
   };
   

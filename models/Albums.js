@@ -4,8 +4,10 @@ export default (database, DataTypes) => {
     {
       album_id: {
         type: DataTypes.INTEGER,
+        autoIncrement:true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        
       },
       album_name: {
         type: DataTypes.STRING

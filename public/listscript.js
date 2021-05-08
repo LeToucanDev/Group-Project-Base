@@ -21,7 +21,7 @@ function getData(){
         `
     });
 
-    element = document.getElementById('contra1');
+    let element = document.querySelector('#contra1');
     element.innerHTML = html;
 }
 

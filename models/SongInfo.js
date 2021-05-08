@@ -5,6 +5,7 @@ export default (sequelize, DataTypes) => {
       song_info_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true
       },
       bpm: {

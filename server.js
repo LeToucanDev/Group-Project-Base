@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import express from 'express';
-import path from 'path';
+
 
 import db from './database/initializeDB.js';
 import apiRoutes from './routes/apiRoutes.js';

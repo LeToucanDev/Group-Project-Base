@@ -5,6 +5,7 @@ export default (sequelize, DataTypes) => {
       artist_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true
       },
       artist_name: {

@@ -19,7 +19,6 @@ router.get('/albums', async (req, res) => {
     const reply = albums.length > 0 ? { data: albums } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
-    console.error(err);
     res.error('Server error');
   }
 });
@@ -45,18 +44,23 @@ router.get('/albums/:album_id', async (req, res) => {
 
 
 router.post('/albums', async (req, res) => {
-  const album = await db.Albums.findAll();
-  const currentId = (await album.length) + 1;
+  const album = await db.Albums.findAll({
+    where:{
+      album_name: req.body.album_name
+    }
+  });
+  console.log('Creating new album');
+  console.log(album);
   try {
       const newAlbum = await db.Albums.create({
-      album_id: currentId,
       album_name: req.body.album_name
     });
+    console.log(newAlbum)
     res.json(newAlbum); ///TODO:TEST THIS OUT LATER
   } catch (err) {
-    console.error(err);
-    res.error('Server error');
+    res.json('Server error');
   }
+
 });
 
 router.delete('/albums/:album_id', async (req, res) => {
@@ -211,22 +215,39 @@ router.get('/songs/album/:album_id', async (req, res) => {
   }
 });
 
+
+
 router.post('/songs', async (req, res) => {
-  const song = await db.Songs.findAll();
-  const currentId = (await song.length) + 1;
-  try {
-    const newSong = await db.Songs.create({
-      song_id: currentId,
-      title: req.body.title,
-      genre: req.body.genre,
-      release_date: req.body.release_date,
-      artist_id: req.body.artist_id,
-      song_length: req.body.song_length,
-      album_id: req.body.album_id
-    });
-    res.json(song);
+  const artist = await db.Artists.findAll();
+  const artId = (await artist.length) +101;
+  const album = await db.Albums.findAll();
+  const albId = (await album.length) + 101;
+  try{
+      const newAlbum = await db.Albums.create({
+        album_id: albId,
+        album_name: req.body.album_name
+      });
+    
+      const newArtist = await db.Artists.create({
+        artist_id: artId,
+        artist_name: req.body.artist_name
+      });
+      console.log(newArtist);
+
+  
+      const newSong = await db.Songs.create({
+        title: req.body.title,
+        genre: req.body.genre,
+        release_date: req.body.release_date,
+        artist_id: artId,
+        song_length: req.body.song_length,
+        album_id: albId
+      });
+      console.log(newSong);
+
+
   }catch(err){
-    res.error(err);
+    res.json("Server Error");
   }
 });
 
