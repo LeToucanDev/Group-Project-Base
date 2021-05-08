@@ -1,7 +1,7 @@
 function getData(){
     let result = JSON.parse(window.localStorage.getItem("filteredAlbums")); // Retrieving   
     // Simulate a mouse click:
-    element = document.getElementById('contra1');
+    let element = document.querySelector('#contra1');
     let html = element.innerHTML;
     result.forEach(element => {
         html += `
@@ -13,8 +13,7 @@ function getData(){
             </tr>
         `
     });
-
-    let element = document.querySelector('#contra1');
+    
     element.innerHTML = html;
 }
 
