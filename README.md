@@ -51,21 +51,21 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 
 /api is the main api route. This does not really return anything, but is needed to access all the endpoints.         
 /api/songs      
-- GET - Logs to console response query from URL. returns response 'Got a GET request from /api'.        
-- POST - obtains title, album name, artist name, release release date,  from request body to fetch url. fetch data json from Music API and returns JSON response.        
-- PUT - returns response 'Got a PUT request at /api'.         
+- GET - Logs to console response query from URL. returns response 'Json object from /api/songs'.        
+- POST - obtains title, album name, artist name, song length, genre, release date  from request body to fetch url. fetch data json from Music API and returns JSON response.        
+- PUT - returns response 'Successfully Updated'.         
            
 /api/albums         
-- GET - Logs to console response query from URL. returns response 'Got a GET request from /api'.            
-- PUT - returns response 'Got a PUT request at /api'.          
+- GET - Logs to console response query from URL. returns response 'Json objects from /api/albums'.            
+- PUT - returns response 'Successfully Updated'.          
          
 /api/artists          
-- GET - Logs to console response query from URL. returns response 'Got a GET request from /api'.          
-- PUT - returns response 'Got a PUT request at /api'.        
+- GET - Logs to console response query from URL. returns response 'Json objects from /api'.          
+- PUT - returns response 'Successfully Updated'.        
               
 /api/songinfo          
 - GET - Logs to console response query from URL. Sends you to the endpoint: '/songinfo'.           
-- PUT - returns response 'Got a PUT request at /api'.          
+- PUT - returns response 'Successfully Updated'.          
              
 /api/lyrics           
 - GET - Logs to console response query from URL. Sends you to the '/lyrics' endpoint to see your list of lyrics             
