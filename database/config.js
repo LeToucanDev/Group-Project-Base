@@ -1,23 +1,26 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 export default {
   development: {
-    username: 'student',
-    password: 'INST377@UMD',
-    database: 'INST_project',
-    host: '3.236.243.212',
+    username: process.env.USER,
+    password: process.env.PASS,
+    database: process.env.DB,
+    host: process.env.HOST,
     dialect: 'mysql'
   },
   test: {
-    username: 'student',
-    password: 'INST377@UMD',
-    database: 'INST_project',
-    host: '3.236.243.212',
+    username: process.env.USER,
+    password: process.env.PASS,
+    database: process.env.DB,
+    host: process.env.HOST,
     dialect: 'mysql'
   },
   production: {
-    username: 'student',
-    password: 'INST377@UMD',
-    database: 'INST_project',
-    host: '3.236.243.212',
+    username: process.env.USER,
+    password: process.env.PASS,
+    database: process.env.DB,
+    host: process.env.HOST,
     dialect: 'mysql'
-  }
+  },
 };

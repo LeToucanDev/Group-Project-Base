@@ -1,9 +1,12 @@
 import Sequelize from 'sequelize';
+import dotenv from 'dotenv';
+
 
 import configOptions from './config.js';
 import modelList from '../models/index.js';
 
 const { DataTypes } = Sequelize;
+dotenv.config();
 
 const env = process.env.NODE_ENV || 'development';
 const config = configOptions[env];

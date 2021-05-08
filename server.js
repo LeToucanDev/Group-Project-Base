@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import express from 'express';
+import dotenv from 'dotenv';
 
 
 import db from './database/initializeDB.js';
@@ -10,7 +11,7 @@ import es6Renderer from 'express-es6-template-engine'
 
 
 const app = express();
-
+dotenv.config();
 const staticFolder = 'public';
 
 
