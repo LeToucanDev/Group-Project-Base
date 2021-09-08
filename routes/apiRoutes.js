@@ -125,20 +125,6 @@ router.get('/artists/:artist_id', async (req, res) => {
   }
 });
 
-router.post('/artists', async (req, res) => {
-  const artist = await db.Artists.findAll();
-  const currentId = (await artist.length) + 1;
-  try {
-    const newArtist = await db.Artists.create({
-      artist_id: currentId,
-      artist_name: req.body.artist_name
-    });
-    res.json(newArtist);
-  } catch (err) {
-    console.error(err);
-    res.error('Server error');
-  }
-});
 
 router.delete('/artists/:artist_id', async (req, res) => {
   try {
@@ -244,6 +230,7 @@ router.post('/songs', async (req, res) => {
         album_id: albId
       });
       console.log(newSong);
+      res.send('Successful');
 
 
   }catch(err){
